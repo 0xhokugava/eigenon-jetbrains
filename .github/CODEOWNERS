@@ -1,0 +1,11 @@
+# The repository maintainer reviews all changes by default.
+* @0xhokugava
+
+# Build, automation, and ownership configuration are security-sensitive.
+/.github/ @0xhokugava
+/gradle/ @0xhokugava
+/gradlew @0xhokugava
+/gradlew.bat @0xhokugava
+/build.gradle.kts @0xhokugava
+/settings.gradle.kts @0xhokugava
+/gradle.properties @0xhokugava
