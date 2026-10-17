@@ -21,4 +21,4 @@ The plugin integrates OpenQASM editing, source-located diagnostics, circuit exec
 
 ## Related project
 
-The plugin is powered by the [Eigenon quantum circuit simulator](https://github.com/0xhokugava/eigenon).
+The plugin is powered by the [Eigenon](https://github.com/0xhokugava/eigenon).
