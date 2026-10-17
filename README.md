@@ -15,3 +15,10 @@ The plugin integrates OpenQASM editing, source-located diagnostics, circuit exec
 - Optimization previews with before/after comparisons
 - Rust Circuit API and OpenQASM conversion
 - Qiskit and additional framework interoperability
+
+> [!IMPORTANT]
+> This project is in early development and does not yet provide a published JetBrains plugin.
+
+## Related project
+
+The plugin is powered by the [Eigenon quantum circuit simulator](https://github.com/0xhokugava/eigenon).
