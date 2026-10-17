@@ -1,0 +1,77 @@
+name: Bug report
+description: Report reproducible incorrect behavior in the plugin
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug. For security vulnerabilities, use [private vulnerability reporting](https://github.com/0xhokugava/eigenon-jetbrains/security/advisories/new) instead of this public form.
+
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: Prerequisites
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: This report does not contain credentials, private data, or an undisclosed security vulnerability.
+          required: true
+
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version or commit
+      placeholder: 0.1.0 or commit SHA
+    validations:
+      required: true
+
+  - type: input
+    id: ide-version
+    attributes:
+      label: IDE and version
+      placeholder: IntelliJ IDEA 2025.3.6.1
+    validations:
+      required: true
+
+  - type: input
+    id: operating-system
+    attributes:
+      label: Operating system
+      placeholder: macOS 15, Ubuntu 24.04, or Windows 11
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Explain what went wrong and how it affects you.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open ...
+        2. Run ...
+        3. Observe ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs and additional context
+      description: Remove secrets and personal data before attaching logs or screenshots.
+      render: shell

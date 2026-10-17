@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/0xhokugava/eigenon-jetbrains/security/advisories/new
+    about: Report security issues privately to the maintainers.
