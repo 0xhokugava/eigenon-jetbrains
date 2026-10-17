@@ -1,0 +1,117 @@
+name: Build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build plugin
+    runs-on: ubuntu-latest
+    steps:
+      - name: Maximize build space
+        uses: jlumbroso/free-disk-space@v2.0.0
+        with:
+          tool-cache: false
+          large-packages: false
+
+      - name: Fetch sources
+        uses: actions/checkout@v7
+
+      - name: Set up Java
+        uses: actions/setup-java@v6
+        with:
+          distribution: zulu
+          java-version: 21
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v6
+
+      - name: Build plugin
+        run: ./gradlew buildPlugin
+
+      - name: Upload plugin distribution
+        uses: actions/upload-artifact@v7
+        with:
+          name: plugin-distribution
+          path: build/distributions/*.zip
+
+  test:
+    name: Test
+    needs: [ build ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Maximize build space
+        uses: jlumbroso/free-disk-space@v2.0.0
+        with:
+          tool-cache: false
+          large-packages: false
+
+      - name: Fetch sources
+        uses: actions/checkout@v7
+
+      - name: Set up Java
+        uses: actions/setup-java@v6
+        with:
+          distribution: zulu
+          java-version: 21
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v6
+        with:
+          cache-read-only: true
+
+      - name: Run tests
+        run: ./gradlew check
+
+      - name: Upload test reports
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: test-results
+          path: build/reports/tests
+
+  verify:
+    name: Verify plugin
+    needs: [ build ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Maximize build space
+        uses: jlumbroso/free-disk-space@v2.0.0
+        with:
+          tool-cache: false
+          large-packages: false
+
+      - name: Fetch sources
+        uses: actions/checkout@v7
+
+      - name: Set up Java
+        uses: actions/setup-java@v6
+        with:
+          distribution: zulu
+          java-version: 21
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v6
+        with:
+          cache-read-only: true
+
+      - name: Run Plugin Verifier
+        run: ./gradlew verifyPlugin
+
+      - name: Upload Plugin Verifier reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: plugin-verifier-results
+          path: build/reports/pluginVerifier
+          if-no-files-found: warn

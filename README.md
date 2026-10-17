@@ -19,6 +19,25 @@ The plugin integrates OpenQASM editing, source-located diagnostics, circuit exec
 > [!IMPORTANT]
 > This project is in early development and does not yet provide a published JetBrains plugin.
 
+## Development
+
+The project scaffold follows the official [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) and uses the IntelliJ Platform Gradle Plugin 2.x.
+
+Prerequisites:
+
+- JDK 21
+
+Common tasks:
+
+```shell
+./gradlew check
+./gradlew buildPlugin
+./gradlew verifyPlugin
+./gradlew runIde
+```
+
+The built plugin ZIP is written to `build/distributions`. CI runs the build, platform tests, and Plugin Verifier for pushes to `master` and for pull requests.
+
 ## Related project
 
 The plugin is powered by the [Eigenon](https://github.com/0xhokugava/eigenon).

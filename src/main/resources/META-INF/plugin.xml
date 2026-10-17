@@ -1,0 +1,22 @@
+<!-- IntelliJ Platform plugin descriptor: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <id>io.eigenon.jetbrains</id>
+    <name>Eigenon Quantum Toolkit</name>
+    <vendor url="https://github.com/0xhokugava/eigenon">Eigenon</vendor>
+
+    <description><![CDATA[
+        <p>JetBrains IDE support for developing, running, visualizing, analyzing, and debugging quantum circuits with Eigenon.</p>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <actions>
+        <action
+                id="io.eigenon.jetbrains.actions.AboutEigenonAction"
+                class="io.eigenon.jetbrains.actions.AboutEigenonAction"
+                text="About Eigenon Quantum Toolkit"
+                description="Show information about the Eigenon Quantum Toolkit plugin">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>
