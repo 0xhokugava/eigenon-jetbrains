@@ -19,3 +19,21 @@ gradle-app.setting
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+# JetBrains
+.idea/
+*.iml
+out/
+
+# Kotlin and IntelliJ Platform
+.kotlin/
+.intellijPlatform/
+
+# Local configuration
+local.properties
+.env
+
+# Signing credentials
+*.jks
+*.p12
+*.pem
