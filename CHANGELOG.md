@@ -10,3 +10,4 @@
 - A minimal Tools menu action and platform test coverage.
 - GitHub Actions checks for building, testing, and IntelliJ Plugin Verifier compatibility.
 - OpenQASM 2.0 and 3.x file recognition, syntax highlighting, configurable colors, and fixture-based tests.
+- IDE settings for selecting, validating, and automatically discovering the Eigenon executable.

@@ -25,6 +25,11 @@
                 implementationClass="io.eigenon.jetbrains.openqasm.parser.OpenQasmParserDefinition"/>
         <colorSettingsPage
                 implementation="io.eigenon.jetbrains.openqasm.highlighting.OpenQasmColorSettingsPage"/>
+        <applicationConfigurable
+                parentId="tools"
+                instance="io.eigenon.jetbrains.settings.EigenonSettingsConfigurable"
+                id="io.eigenon.jetbrains.settings.EigenonSettingsConfigurable"
+                displayName="Eigenon"/>
     </extensions>
 
     <actions>
