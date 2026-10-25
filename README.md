@@ -25,6 +25,10 @@ The plugin recognizes `.qasm` files and provides lexical syntax highlighting for
 
 This initial language layer works without the Eigenon executable. It does not yet provide structured parsing, semantic validation, completion, navigation, formatting, refactoring, or execution. OpenQASM 3 support is lexical and does not imply that the Eigenon runtime can import every OpenQASM 3 construct.
 
+## Eigenon executable
+
+The plugin discovers an `eigenon` executable from `PATH` by default. To use a specific installation, open **Settings | Tools | Eigenon** and select the executable manually. The configured path is stored only in the local IDE configuration and is not written to the project.
+
 ## Development
 
 The project scaffold follows the official [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template) and uses the IntelliJ Platform Gradle Plugin 2.x.
