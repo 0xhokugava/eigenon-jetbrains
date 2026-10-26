@@ -4,10 +4,10 @@
 
 ## [Unreleased]
 
+## [0.1.0]
+
 ### Added
 
-- Initial scaffold based on the official [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template).
-- A minimal Tools menu action and platform test coverage.
-- GitHub Actions checks for building, testing, and IntelliJ Plugin Verifier compatibility.
-- OpenQASM 2.0 and 3.x file recognition, syntax highlighting, configurable colors, and fixture-based tests.
-- IDE settings for selecting, validating, and automatically discovering the Eigenon executable.
+- OpenQASM 2.0 and OpenQASM 3.x file recognition and lexical syntax highlighting.
+- Configurable OpenQASM editor colors.
+- Eigenon executable discovery, validation, and manual configuration.

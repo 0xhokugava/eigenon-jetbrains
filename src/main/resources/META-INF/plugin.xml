@@ -1,11 +1,34 @@
 <!-- IntelliJ Platform plugin descriptor: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
-<idea-plugin>
+<idea-plugin url="https://github.com/0xhokugava/eigenon-jetbrains">
     <id>io.eigenon.jetbrains</id>
     <name>Eigenon Quantum Toolkit</name>
     <vendor url="https://github.com/0xhokugava/eigenon">Eigenon</vendor>
 
     <description><![CDATA[
-        <p>JetBrains IDE support for developing, running, visualizing, analyzing, and debugging quantum circuits with Eigenon.</p>
+        <p>OpenQASM editing for JetBrains IDEs.</p>
+
+        <p>Eigenon Quantum Toolkit provides the editor foundations for working with
+        OpenQASM 2.0 and OpenQASM 3.x files:</p>
+
+        <ul>
+            <li><code>.qasm</code> file recognition and a dedicated file icon</li>
+            <li>Lexical syntax highlighting for declarations, types, built-in gates,
+                constants, identifiers, literals, comments, operators, and punctuation</li>
+            <li>Configurable colors under <b>Editor | Color Scheme | OpenQASM</b></li>
+            <li>Eigenon executable discovery from <code>PATH</code> or an explicit path
+                under <b>Settings | Tools | Eigenon</b></li>
+        </ul>
+
+        <p>This initial release does not yet provide semantic validation, completion,
+        formatting, run configurations, circuit execution, visualization, or debugging.</p>
+
+        <p>
+            <a href="https://github.com/0xhokugava/eigenon-jetbrains">Source code</a> |
+            <a href="https://github.com/0xhokugava/eigenon-jetbrains/issues">Issue tracker</a> |
+            <a href="https://github.com/0xhokugava/eigenon-jetbrains#readme">Documentation</a> |
+            <a href="https://github.com/0xhokugava/eigenon-jetbrains/security/policy">Security policy</a> |
+            <a href="https://github.com/0xhokugava/eigenon-jetbrains/blob/master/LICENSE">License</a>
+        </p>
     ]]></description>
 
     <depends>com.intellij.modules.platform</depends>

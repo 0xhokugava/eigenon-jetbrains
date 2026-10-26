@@ -1,23 +1,35 @@
 # Eigenon Quantum Toolkit for JetBrains
 
-A JetBrains IDE plugin for developing, running, visualizing, analyzing, and debugging quantum circuits with Eigenon.
+A JetBrains IDE plugin for editing OpenQASM files and configuring the Eigenon executable.
 
-The plugin integrates OpenQASM editing, source-located diagnostics, circuit execution, state inspection, circuit visualization, optimization tools, and interoperability workflows directly into JetBrains IDEs.
+## Current capabilities
 
-## Planned capabilities
+- OpenQASM 2.0 and OpenQASM 3.x `.qasm` file recognition
+- Lexical syntax highlighting for declarations, types, built-in gates, constants, identifiers, literals, comments, operators, and punctuation
+- Configurable colors under **Editor | Color Scheme | OpenQASM**
+- Automatic discovery of the `eigenon` executable from `PATH`
+- Manual executable selection and validation under **Settings | Tools | Eigenon**
 
-- OpenQASM 2 and OpenQASM 3 language support
-- Syntax highlighting, completion, formatting, and diagnostics
-- Run configurations powered by the Eigenon simulator
-- Circuit diagrams and operation statistics
-- State-vector, probability, and measurement inspection
-- Step-by-step circuit execution
-- Optimization previews with before/after comparisons
-- Rust Circuit API and OpenQASM conversion
-- Qiskit and additional framework interoperability
+This initial release does not provide semantic validation, completion, formatting, run configurations, circuit execution, visualization, or debugging.
 
 > [!IMPORTANT]
 > This project is in early development and does not yet provide a published JetBrains plugin.
+
+## Installation
+
+### From JetBrains Marketplace
+
+After the first release is approved, open **Settings | Plugins | Marketplace**, search for **Eigenon Quantum Toolkit**, and select **Install**.
+
+### From a local build
+
+Build the plugin distribution:
+
+```shell
+./gradlew buildPlugin
+```
+
+In the IDE, open **Settings | Plugins**, select the gear menu, choose **Install Plugin from Disk**, and select the ZIP from `build/distributions`.
 
 ## OpenQASM editor support
 
@@ -28,6 +40,16 @@ This initial language layer works without the Eigenon executable. It does not ye
 ## Eigenon executable
 
 The plugin discovers an `eigenon` executable from `PATH` by default. To use a specific installation, open **Settings | Tools | Eigenon** and select the executable manually. The configured path is stored only in the local IDE configuration and is not written to the project.
+
+To install the executable from the Eigenon source repository:
+
+```shell
+git clone https://github.com/0xhokugava/eigenon.git
+cd eigenon
+cargo install --path .
+```
+
+OpenQASM editing works without the executable. The current plugin release validates and stores the executable location but does not yet run circuits from the IDE.
 
 ## Development
 
@@ -51,3 +73,10 @@ The built plugin ZIP is written to `build/distributions`. CI runs the build, pla
 ## Related project
 
 The plugin is powered by the [Eigenon](https://github.com/0xhokugava/eigenon).
+
+## Support and project links
+
+- [Issue tracker](https://github.com/0xhokugava/eigenon-jetbrains/issues)
+- [Security policy](SECURITY.md)
+- [Contributing guide](CONTRIBUTING.md)
+- [GNU General Public License v3.0](LICENSE)
