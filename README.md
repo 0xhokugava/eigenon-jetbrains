@@ -77,6 +77,7 @@ The plugin is powered by the [Eigenon](https://github.com/0xhokugava/eigenon).
 ## Support and project links
 
 - [Issue tracker](https://github.com/0xhokugava/eigenon-jetbrains/issues)
+- [Development roadmap](ROADMAP.md)
 - [Security policy](SECURITY.md)
 - [Contributing guide](CONTRIBUTING.md)
 - [GNU General Public License v3.0](LICENSE)
